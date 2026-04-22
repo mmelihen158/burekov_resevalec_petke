@@ -155,7 +155,6 @@ HTML = """
 
     <h2>Možnosti</h2>
     <p>{{ words|join(', ') }}</p>
-
 </body>
 </html>
 """
@@ -175,6 +174,7 @@ def index():
 
         if len(guess) == 5 and len(result) == 5:
             session["moznosti"] = filter_words(session["moznosti"], guess, result)
+            session.modified = True
 
     moznosti = session["moznosti"]
     top10 = best_10_words(moznosti, freq)
@@ -189,8 +189,8 @@ def index():
 
 @app.route("/reset", methods=["POST"])
 def reset():
-    session.clear()
-    session["moznosti"] = all_words.copy()
+    session.pop("moznosti", None)
+    session.modified = True
     return redirect(url_for("index"))
 
 
