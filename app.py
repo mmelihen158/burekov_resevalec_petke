@@ -77,7 +77,7 @@ HTML = """
 <!doctype html>
 <html>
 <head>
-<title>Wordle Solver</title>
+<title>burekov reševalec petke</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body { font-family: Arial; max-width: 700px; margin:auto; padding:20px; background:#121213; color:white; }
