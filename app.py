@@ -88,21 +88,22 @@ button{cursor:pointer;background:#538d4e;color:white}
 </head>
 <body>
 
-<h1>Wordle Solver</h1>
+<h1>BUREKOV REŠEVALEC PETKE</h1>
 
 <p><b>Možnih besed:</b> {{ count }}</p>
 
 <form method="post">
-<input name="guess" placeholder="Beseda" maxlength="5" required>
+<input name="guess" placeholder="Burek" maxlength="5" required>
 <input name="result" placeholder="z/r/c" maxlength="5" required>
 <button type="submit">Potrdi</button>
 </form>
 
 <form action="/reset" method="post">
-<button class="reset" type="submit">Nova beseda</button>
+<button class="reset" type="submit">Nov burek</button>
 </form>
 
-<h2>Top 10</h2>
+<h2>Top 10 burekov</h2>
+<h2>najbolsi je mesni</h2>
 <ul>
 {% for w,s in top10 %}
 <li>{{ w }} ({{ s }})</li>
@@ -110,7 +111,7 @@ button{cursor:pointer;background:#538d4e;color:white}
 </ul>
 
 <h2>Možnosti</h2>
-<p>{{ words[:20] }}</p>
+<p>{{ words[:100] }}</p>
 
 </body>
 </html>
